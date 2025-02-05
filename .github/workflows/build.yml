@@ -38,7 +38,11 @@ jobs:
           node-version: 18.x
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-          
+
+      - name: install ADF Utilities package
+        run: npm install
+        working-directory: ${{github.workspace}}
+
       - name: Cache node modules
         uses: actions/cache@v3
         with:
@@ -47,9 +51,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Clean install dependencies
-        run: tree
-
+              
       - name: Clean install dependencies
         run: npm ci
         working-directory: ${{github.workspace}}
