@@ -1,9 +1,0 @@
-{
-	"name": "mayur-dev-adf-poc",
-	"location": "centralindia",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "e0f6759b-e65e-4ae4-99be-20e22231dc71",
-		"tenantId": "e4e34038-ea1f-4882-b6e8-ccd776459ca0"
-	}
-}
