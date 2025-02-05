@@ -47,6 +47,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+      - name: Clean install dependencies
+        run: tree
 
       - name: Clean install dependencies
         run: npm ci
