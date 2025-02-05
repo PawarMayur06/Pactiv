@@ -52,15 +52,15 @@ jobs:
 
       - name: Clean install dependencies
         run: npm ci
-        working-directory: ${{github.workspace}}/ADFroot/build
+        working-directory: ${{github.workspace}}/ADFroot
 
       - name: Validate
         run: npm run build validate ${{github.workspace}}/ADFroot/ /subscriptions/${{ secrets.SUBSCRIPTION_ID}}/resourceGroups/${{ env.rg-name}}/providers/Microsoft.DataFactory/factories/${{ env.adf-name}}
-        working-directory: ${{github.workspace}}/ADFroot/build
+        working-directory: ${{github.workspace}}/ADFroot
         
       - name: Validate and Generate ARM template
         run: npm run build export ${{github.workspace}}/ADFroot/ /subscriptions/${{ secrets.SUBSCRIPTION_ID}}/resourceGroups/${{ env.rg-name}}/providers/Microsoft.DataFactory/factories/${{ env.adf-name}} "ExportedArmTemplate"
-        working-directory: ${{github.workspace}}/ADFroot/build
+        working-directory: ${{github.workspace}}/ADFroot
 
       - name: Commit and push changes
         run: |
@@ -76,7 +76,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ExportedArmTemplate
-          path: ${{github.workspace}}/ADFroot/build/ExportedArmTemplatez/ 
+          path: ${{github.workspace}}/ADFroot/ExportedArmTemplatez/ 
 
 
 
