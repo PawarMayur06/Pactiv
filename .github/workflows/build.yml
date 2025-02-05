@@ -51,10 +51,10 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-              
-      - name: Clean install dependencies
-        run: npm ci
-        working-directory: ${{github.workspace}}
+
+      # - name: Clean install dependencies
+      #   run: npm ci
+      #   working-directory: ${{github.workspace}}
 
       - name: Validate
         run: npm run build validate ${{github.workspace}}/ /subscriptions/${{ secrets.SUBSCRIPTION_ID}}/resourceGroups/${{ env.rg-name}}/providers/Microsoft.DataFactory/factories/${{ env.adf-name}}
