@@ -86,7 +86,7 @@ jobs:
     environment: UAT
     steps:
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.2
+        uses: actions/download-artifact@v4
         with:
           name: ExportedArmTemplate
       
