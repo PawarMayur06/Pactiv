@@ -1,0 +1,15 @@
+name: List Files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  list_files:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Run ls command
+        run: ls -la 
